@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
-
+require('dotenv').config()
 //Define the mongodb connection URI
-const mongodbURI = 'mongodb://127.0.0.1:27017/hotels'
+// const mongodbURI = process.env.DB_URL_LOCAL
+const mongodbURL = process.env.DB_URL
 
 // set up mongodb connection
-mongoose.connect(mongodbURI)
+mongoose.connect(mongodbURL)
 
 
 // Get the default connection
